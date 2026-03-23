@@ -45,7 +45,7 @@ class multiset{
 
 		bool variance_tour(const node<DataType>*src_tree_ptr,DataType& avg1,DataType&avg2)const;
 
-		bool median_tour (const node<DataType>*src_tree_ptr,const node<DataType>*& median_ptr)const ;
+		bool Mode_tour (const node<DataType>*src_tree_ptr,const node<DataType>*& Mode_ptr)const ;
 
 		bool pmf_tour(const node<DataType>*src_tree_ptr,std::vector<double>&pmf_vec,uint32_t &counter)const;
 		bool cmf_tour(const node<DataType>*src_tree_ptr,std::vector<double>&pmf_vec,uint32_t &counter)const;
@@ -78,7 +78,7 @@ class multiset{
 		DataType average(const double&)const;	
 		DataType variance(void)const ;
 		void display(void)const;
-		DataType median(void)const ;
+		DataType Mode(void)const ;
 		std::vector<double> pmf(void)const ;
 		std::vector<double> cmf(void)const ;
 		DataType standard_deviation(void)const;
