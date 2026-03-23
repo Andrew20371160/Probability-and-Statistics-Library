@@ -449,21 +449,21 @@ bool multiset<DataType>::unique_elements_tour(const node<DataType>*src_tree_ptr,
 	}
 
 	template<typename DataType>
-	bool multiset<DataType>::median_tour(const node<DataType>*src_tree_ptr,const node<DataType>*&median_ptr)const {
+	bool multiset<DataType>::Mode_tour(const node<DataType>*src_tree_ptr,const node<DataType>*&Mode_ptr)const {
 		if(src_tree_ptr){
 			if(src_tree_ptr->left){
-				median_tour(src_tree_ptr->left,median_ptr) ;
+				Mode_tour(src_tree_ptr->left,Mode_ptr) ;
 			}
-			if(median_ptr==NULL){
-				median_ptr=src_tree_ptr;  
+			if(Mode_ptr==NULL){
+				Mode_ptr=src_tree_ptr;  
 			}
 			else{
-				if(src_tree_ptr->counter>median_ptr->counter){
-					median_ptr = src_tree_ptr ; 
+				if(src_tree_ptr->counter>Mode_ptr->counter){
+					Mode_ptr = src_tree_ptr ; 
 				}
 			}
 			if(src_tree_ptr->right){
-				median_tour(src_tree_ptr->right,median_ptr) ;
+				Mode_tour(src_tree_ptr->right,Mode_ptr) ;
 			}
 			return 0;
 		}
@@ -537,11 +537,11 @@ bool multiset<DataType>::unique_elements_tour(const node<DataType>*src_tree_ptr,
 		return 0;
 	}
 	template<typename DataType>
-	DataType multiset<DataType>::median(void)const {
+	DataType multiset<DataType>::Mode(void)const {
 		if(tree.nodes_count){
-			const node<DataType>*ret_median =NULL; 
-			median_tour(tree.root,ret_median) ; 
-			return ret_median->data ;
+			const node<DataType>*ret_Mode =NULL; 
+			Mode_tour(tree.root,ret_Mode) ; 
+			return ret_Mode->data ;
 		}
 		std::cout<<"\nemtpy tree";
 		DataType garbage_val ; 
