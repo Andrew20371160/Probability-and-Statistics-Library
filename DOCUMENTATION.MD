@@ -261,7 +261,7 @@ multiset<int> difference = set1 - set2;
 double avg = set1.average();
 double var = set1.variance();
 double stdev = set1.standard_deviation();
-int med = set1.Mode();
+int mode = set1.Mode();
 
 // Probability functions
 vector<double> pmf = set1.pmf();
